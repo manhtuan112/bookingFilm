@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <img src={logo} alt="The Movie Booking" />
       <img src={footerBg} alt="" />
-      
+      thư phat cuoi
     </div>
   );
 }
