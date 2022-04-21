@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/the-booking-ticket-film/static/css/main.56fa19c8.css",
-    "main.js": "/the-booking-ticket-film/static/js/main.d8d348a0.js",
-    "static/media/footer-bg.jpg": "/the-booking-ticket-film/static/media/footer-bg.67e95f05e76a8cebf7e2.jpg",
-    "static/media/tmovie.png": "/the-booking-ticket-film/static/media/tmovie.67797e942e59deb68592.png",
-    "index.html": "/the-booking-ticket-film/index.html",
-    "main.56fa19c8.css.map": "/the-booking-ticket-film/static/css/main.56fa19c8.css.map",
-    "main.d8d348a0.js.map": "/the-booking-ticket-film/static/js/main.d8d348a0.js.map"
+    "main.css": "/bookingFilm/static/css/main.56fa19c8.css",
+    "main.js": "/bookingFilm/static/js/main.a1667036.js",
+    "static/media/footer-bg.jpg": "/bookingFilm/static/media/footer-bg.67e95f05e76a8cebf7e2.jpg",
+    "static/media/tmovie.png": "/bookingFilm/static/media/tmovie.67797e942e59deb68592.png",
+    "index.html": "/bookingFilm/index.html",
+    "main.56fa19c8.css.map": "/bookingFilm/static/css/main.56fa19c8.css.map",
+    "main.a1667036.js.map": "/bookingFilm/static/js/main.a1667036.js.map"
   },
   "entrypoints": [
     "static/css/main.56fa19c8.css",
-    "static/js/main.d8d348a0.js"
+    "static/js/main.a1667036.js"
   ]
 }
