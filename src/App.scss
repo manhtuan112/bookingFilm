@@ -32,3 +32,56 @@ body{
         margin-bottom: 3rem;
     }
 }
+
+a{
+    text-decoration: none;
+    color: unset;
+    //thuoc tinh cho phep ke thua lai gia tri do cua phan tu cho
+    //neu phan tu cha ko co thuoc tinh do hoac thuoc tinh do ko dc ke thua(boder-color) thi gia tri se la mac dinh
+}
+
+@media (hover: hover){ //ngan viec bi giu hieu ung hover tren dien thoai
+    a:hover{
+        color: $main-color;
+    }
+}
+
+button, input{
+    outline: none; //thanh phan ben ngoai boder khong chiem kgian cua phan tu
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+    object-fit: cover;
+}
+
+iframe{
+    border: 0;
+}
+
+.container{
+    max-width: 1600px;
+    margin: 0 auto;
+
+}
+
+.mb-3{
+    margin-bottom: 3rem;
+}
+
+.mb-2{
+    margin-bottom: 2rem;
+}
+
+.section{
+    padding: 0 2rem;
+
+    &__header{
+        @include flex(center, space-between);
+    }
+}
+
