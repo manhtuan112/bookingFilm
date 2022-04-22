@@ -1,11 +1,25 @@
 
 import './App.scss';
+import {Routes, Route} from 'react-router-dom'
+import { routeList } from './config/routeList';
+import Header from './components/header';
+import Footer from './components/footer';
+import Home from './pages/Home';
+import Detal from './pages/Detal';
+import Catalog from './pages/Catalog';
 
 function App() {
   return (
-    <div className="App">
-      <i class='bx bx-user'>fgfdg</i>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path={routeList.HOME} element={<Home />} />
+        <Route path={routeList.DETAIL} element={<Detal />} />
+        <Route path={routeList.CATEGORY} element={<Catalog />} />
+        <Route path={routeList.CATEGORY_SEARCH} element={<Catalog />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
