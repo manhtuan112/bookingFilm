@@ -6,6 +6,8 @@ import 'swiper/scss';
 
 import tmdbApi, { category, movieType } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
+import { useNavigate } from 'react-router-dom';
+
 
 
 
@@ -43,7 +45,9 @@ const HeroSlide = () => {
                 {
                     movieItems.map((item, i) => (
                         <SwiperSlide key={i}>
-                            <img src={apiConfig.originalImage(item.backdrop_path)} alt="" />
+                            {({isActive})=> (
+                                <HeroSlideItem item={item} className={`${isActive ? 'active' : ''}`} />
+                            )}
                         </SwiperSlide>
                     ))
                 }
@@ -54,6 +58,19 @@ const HeroSlide = () => {
     );
 }
 
+
+const HeroSlideItem = ({item, className}) =>{
+    const nav = useNavigate()
+
+    const backgroundUrl = apiConfig.originalImage(item.backdrop_path ? item.backdrop_path : item.poster_path)
+
+    return(
+        <div className={`hero-slide__item ${className} `}
+        style={{backgroundImage: `url(${backgroundUrl})`}}>
+            {item.title}
+        </div>
+    )
+}
 
 
 export default HeroSlide;
