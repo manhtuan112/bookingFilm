@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import SwiperCore, { Autoplay, Navigation } from 'swiper';
+import{ Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
-import 'swiper/swiper-bundle.min.css'
+import 'swiper/scss';
 
 import tmdbApi, { category, movieType } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
@@ -14,10 +13,9 @@ import apiConfig from '../../api/apiConfig';
 
 const HeroSlide = () => {
 
-    SwiperCore.use([Autoplay, Navigation]);
+    
 
     const [movieItems, setMovieItems] = useState([]);
-
     useEffect(() => {
         const getMovies = async () => {
             const params = {page: 1}
@@ -35,12 +33,12 @@ const HeroSlide = () => {
     return (
         <div className="hero-slide">
             
-            {/* <Swiper
-                modules={[Autoplay, Navigation]}
+            <Swiper
+                modules={[Autoplay]}
                 grabCursor={true}
                 spaceBetween={0}
                 slidesPerView={1}
-                autoplay={{delay: 3000}}
+                autoplay={{delay: 1000}}
             >
                 {
                     movieItems.map((item, i) => (
@@ -49,7 +47,7 @@ const HeroSlide = () => {
                         </SwiperSlide>
                     ))
                 }
-            </Swiper> */}
+            </Swiper>
             
             
         </div>
