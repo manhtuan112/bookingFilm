@@ -39,7 +39,7 @@ const HeroSlide = () => {
                 grabCursor={true}
                 spaceBetween={0}
                 slidesPerView={1}
-                autoplay={{delay: 1000}}
+                // autoplay={{delay: 1000}}
             >
                 {
                     movieItems.map((item, i) => (
@@ -47,6 +47,8 @@ const HeroSlide = () => {
                             {({isActive})=> (
                                 <HeroSlideItem item={item} className={`${isActive ? 'active' : ''}`} />
                             )}
+
+                            {/* check xem slide đang được chiếu ở hiện tại */}
                         </SwiperSlide>
                     ))
                 }
