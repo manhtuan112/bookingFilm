@@ -27,16 +27,19 @@ Modal.propTypes = {
 
 
 export const ModalContent = (props) =>{
+    const {onClose, children} = props
     const contentRef = useRef(null)
 
     const closeModal = () =>{
         contentRef.current.parentNode.classList.remove('active')
-        if (props.onClose) props.onClose() 
+        if (onClose) {
+            props.onClose() //goi ra function onClose trong props: truyền function lồng function(không dùng onClose được vì phải gọi function trong function)
+        }
     }
 
     return(
         <div ref={contentRef} className="modal__content">
-            {props.children}
+            {children}
             <div className="modal__content-close" onClick={closeModal}>
                 <i className="bx bx-x"></i>
             </div>
