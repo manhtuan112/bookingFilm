@@ -35,7 +35,7 @@ export const ModalContent = (props) =>{
     }
 
     return(
-        <div className="modal__content">
+        <div ref={contentRef} className="modal__content">
             {props.children}
             <div className="modal__content-close" onClick={closeModal}>
                 <i className="bx bx-x"></i>

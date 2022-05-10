@@ -8,6 +8,7 @@ import tmdbApi, { category, movieType } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 import { useNavigate } from 'react-router-dom';
 import HeroSlideItem from './HeroSlideItem';
+import TrailerModal from './TrailerModal';
 
 
 
@@ -53,7 +54,9 @@ const HeroSlide = () => {
                     ))
                 }
             </Swiper>
-            
+            {
+                movieItems.map((item, i) => <TrailerModal key={i} item={item} />)
+            }
             
         </div>
     );
