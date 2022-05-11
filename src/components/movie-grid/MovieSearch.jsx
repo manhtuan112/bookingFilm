@@ -38,7 +38,7 @@ const MovieSearch = (props) => {
     }, [keyword, goToSearch]);
     return (
         <div className='movie-search'>
-            <Input type='text' placeholder={`Enter ${props.category}`} value={keyword} onChange={(e)=>setKeyword(e.target.value)} />
+            <Input type='text' placeholder={`Enter ${props.category === 'tv' ? 'TV Series' : `${props.category}`}`} value={keyword} onChange={(e)=>setKeyword(e.target.value)} />
             <Button className='small' onClick={goToSearch}>Search</Button>
         </div>
     );
