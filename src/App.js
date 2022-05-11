@@ -5,7 +5,7 @@ import { routeList } from './config/routeList';
 import Header from './components/header';
 import Footer from './components/footer';
 import Home from './pages/Home';
-import Detal from './pages/Detal';
+import Detal from './pages/detal/Detal';
 import Catalog from './pages/Catalog';
 
 function App() {

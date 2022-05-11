@@ -4,6 +4,7 @@ import "./movie-grid.scss";
 import tmdbApi, { category, movieType, tvType } from "./../../api/tmdbApi";
 import MovieCard from "./../movie-card/index";
 import { OutlineButton } from "../button";
+import MovieSearch from "./MovieSearch";
 
 const MovieGrid = (props) => {
   const [items, setItems] = useState([]);
@@ -11,40 +12,84 @@ const MovieGrid = (props) => {
   const [totalPage, setTotalPage] = useState(0);
 
   const { keyword } = useParams();
+  
 
   useEffect(() => {
     const getList = async () => {
-      let reponse = null;
+      let response = null;
 
       if (keyword === undefined) {
-        const params = {};
+        const params = {page: page};
         switch (props.category) {
           case category.movie:
-            reponse = await tmdbApi.getMoviesList(movieType.upcoming, {
+            response = await tmdbApi.getMoviesList(movieType.upcoming, {
               params,
             });
             break;
           default:
-            reponse = await tmdbApi.getTvList(tvType.popular, { params });
+            response = await tmdbApi.getTvList(tvType.popular, { params });
         }
       } else {
         const params = {
+          page: page,
           query: keyword,
         };
-        reponse = tmdbApi.search(props.category, { params });
+        
+        response = await tmdbApi.search(props.category, { params });
+
+        
       }
-      setItems(reponse.results);
-      setTotalPage(reponse.total_pages);
+    
+      setItems(response.results);
+      setTotalPage(response.total_pages);
+      
     };
 
     getList();
+    
   }, [props.category, keyword]);
 
-  const viewMore = () => {
-    console.log("view more");
+  const viewMore = async() => {
+      let response = null;
+
+      if (keyword === undefined) {
+        const params = {
+          page: page+1
+        };
+        switch (props.category) {
+          case category.movie:
+            response = await tmdbApi.getMoviesList(movieType.upcoming, {
+              params
+            });
+            break;
+          default:
+            response = await tmdbApi.getTvList(tvType.popular, { params });
+        }
+      } else {
+        const params = {
+          page: page+1,
+          query: keyword,
+        };
+        
+        response = await tmdbApi.search(props.category, { params });
+
+        
+      }
+    
+      
+      
+      setItems([...items, ...response.results]);
+      setPage(page+1)
+      
+      
+    
+
   };
   return (
     <>
+    <section className="section mb-3">
+      <MovieSearch category={props.category} keyword={keyword} />
+    </section>
       <div className="movie-grid">
         {items.map((item, i) => (
           <MovieCard category={props.category} item={item} key={i} />

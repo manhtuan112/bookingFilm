@@ -10,7 +10,12 @@ const MovieCard = (props) => {
     const {item} = props
 
     const link = '/' + category[props.category] + '/' + item.id
-    const backgroundUrl = apiConfig.w500Image(item.poster_path || item.backdrop_path)
+    
+    //anh khong co
+    const backgroundUrl = (item.poster_path || item.backdrop_path) ? apiConfig.w500Image(item.poster_path || item.backdrop_path) : 'https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/471/36/471-36-101P/Null-typealive-Poster.jpg'
+
+    
+
     return (
         <Link to={link}>
             <div className='movie-card' style={{backgroundImage: `url(${backgroundUrl})`}}>
