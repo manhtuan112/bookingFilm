@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/bookingFilm/static/css/main.5471cd66.css",
-    "main.js": "/bookingFilm/static/js/main.279e4fcb.js",
+    "main.css": "/bookingFilm/static/css/main.c341cc85.css",
+    "main.js": "/bookingFilm/static/js/main.6b0ec93f.js",
+    "static/media/footer-bg.jpg": "/bookingFilm/static/media/footer-bg.67e95f05e76a8cebf7e2.jpg",
     "static/media/tmovie.png": "/bookingFilm/static/media/tmovie.67797e942e59deb68592.png",
     "index.html": "/bookingFilm/index.html",
-    "main.5471cd66.css.map": "/bookingFilm/static/css/main.5471cd66.css.map",
-    "main.279e4fcb.js.map": "/bookingFilm/static/js/main.279e4fcb.js.map"
+    "main.c341cc85.css.map": "/bookingFilm/static/css/main.c341cc85.css.map",
+    "main.6b0ec93f.js.map": "/bookingFilm/static/js/main.6b0ec93f.js.map"
   },
   "entrypoints": [
-    "static/css/main.5471cd66.css",
-    "static/js/main.279e4fcb.js"
+    "static/css/main.c341cc85.css",
+    "static/js/main.6b0ec93f.js"
   ]
 }
