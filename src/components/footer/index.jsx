@@ -3,6 +3,7 @@ import './footer.scss'
 import FooterBG from '../../assets/footer-bg.jpg'
 import logo from '../../assets/tmovie.png'
 import { Link } from 'react-router-dom';
+import { routeList } from './../../config/routeList';
 
 const Footer = () => {
     
@@ -17,10 +18,10 @@ const Footer = () => {
                 </div>
                 <div className="footer__content-menus">
                     <div className="footer__content-menu">
-                        <Link to='/'>Home</Link>
-                        <Link to='/'>Contact us</Link>
-                        <Link to='/'>Term of services</Link>
-                        <Link to='/'>About us</Link>
+                        <Link to={routeList.HOME}>Home</Link>
+                        <Link to={routeList.HOME}>Contact us</Link>
+                        <Link to={routeList.HOME}>Term of services</Link>
+                        <Link to={routeList.HOME}>About us</Link>
                     </div>
                     <div className="footer__content-menu">
                         <Link to='/'>Live</Link>
