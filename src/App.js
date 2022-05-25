@@ -7,6 +7,7 @@ import Footer from './components/footer';
 import Home from './pages/Home';
 import Detal from './pages/detail/Detail';
 import Catalog from './pages/Catalog';
+import NotFound from './pages/notFound';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/bookingFilm' element={<Navigate to={routeList.HOME} />}/>
+        <Route path={routeList.NOT_FOUND} element={<NotFound />} />
         <Route path={routeList.HOME} element={<Home />} />
         <Route path={routeList.DETAIL} element={<Detal />} />
         <Route path={routeList.CATEGORY} element={<Catalog />} />
